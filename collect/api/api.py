@@ -2,7 +2,7 @@
 from urllib.parse import urlencode
 from .web_request import json_request
 
-ACCESS_TOKEN = "EAACEdEose0cBAEgOVvxd7pgt1RvzlffVMF752bgWcwH2xGmjJZCIwpfwzZA4fpHprKB1u8ngPVpo8iBu1yFMaQzwjnpvkYtfgDojE4Uv7hEtOmxJHlKzvSLD2TBff0Y5qegxsuZCkKgRZAmtLDRsJOAJFovwKZByEXcjHdludxFBvJcZAAnlfZBPvY9NwOLmPfXVZAH7tfwtkAZDZD"
+ACCESS_TOKEN = "EAACEdEose0cBADkYZAGRzYIrNZClZCebGV9YgZBY5M9YokeRQkD6vuVPUT6BSSVv7lmliiMgs1fAPYzQ1FVM2RZAuZB5TUSY7O9lbU1NsHbLb0AcylombA5dYJfikU349u4onTfwzYHFqfIMSm3LZCtJD7J1kamwXWxYjOgyabnO3YwaNCahLaO2JGimI716NJzTgZBvxmK7ggZDZD"
 BASE_URL_FB_API = "https://graph.facebook.com/v3.0"  # 고정된 값이고 주소 외우삼
 
 

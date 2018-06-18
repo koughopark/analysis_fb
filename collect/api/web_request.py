@@ -10,11 +10,12 @@ def print_error(e):
     print('%s %s' % (e, datetime.now()), file=sys.stderr)
 
 
-def html_request(url='', encoding='utf-8', success=None, error=lambda e: print('%s %s' % (e, datetime.now()), file=sys.stderr)):
+def html_request(url='', encoding='utf-8', success=None,
+                 error=lambda e: print('%s %s' % (e, datetime.now()), file=sys.stderr)):
     try:
         request = Request(url)
         resp = urlopen(request)
-        html = resp.read().decode(encoding)
+        html = resp.read().decode(encoding) # 요청 열기 읽기 # 리퀘스트 오픈 리드
 
         print('%s : success for request[%s]' % (datetime.now(), url))
 
@@ -33,7 +34,7 @@ def json_request(url='', encoding='utf-8', success=None,
     try:
         request = Request(url)  # 리퀘스트 객체 생성
         resp = urlopen(request)  # 응답 받기
-        resp_body = resp.read().decode(encoding)  # 응답 읽기 (바디 내용)  - 바이트로 통신    인코딩 했으면 디코딩도 해야함
+        resp_body = resp.read().decode(encoding)  # 응답 읽기 (바디 내용)  - 바이트로 통신    인코딩 했으면 디코딩도 해야함 *
 
         json_result = json.loads(resp_body)
 

@@ -2,6 +2,7 @@
 from urllib.parse import urlencode
 from .web_request import json_request
 
+# ACCESS_TOKEN : 접근할떄 필요한 키값
 ACCESS_TOKEN = "EAACEdEose0cBADkYZAGRzYIrNZClZCebGV9YgZBY5M9YokeRQkD6vuVPUT6BSSVv7lmliiMgs1fAPYzQ1FVM2RZAuZB5TUSY7O9lbU1NsHbLb0AcylombA5dYJfikU349u4onTfwzYHFqfIMSm3LZCtJD7J1kamwXWxYjOgyabnO3YwaNCahLaO2JGimI716NJzTgZBvxmK7ggZDZD"
 BASE_URL_FB_API = "https://graph.facebook.com/v3.0"  # 고정된 값이고 주소 외우삼
 
@@ -10,7 +11,7 @@ def fb_gen_url(
         base=BASE_URL_FB_API,
         node='',  # 안넣을수도있으니까 기본값으로
         **params):  # 페이스북 url을 generatic을 한다.
-    url = '%s/%s/?%s' % (base, node, urlencode(params))
+    url = '%s/%s/?%s' % (base, node, urlencode(params)) # 노드 없고 바로 params
     return url
 
 
@@ -18,12 +19,12 @@ def fb_gen_url(
 #     이 방법도 가능
 
 def fb_name_to_id(pagename):
-    url = fb_gen_url(node=pagename, access_token=ACCESS_TOKEN)
+    url = fb_gen_url(node=pagename, access_token=ACCESS_TOKEN) # 노드 자리에 access_token 넣는다
     json_result = json_request(url=url)
-    return json_result.get("id")
+    return json_result.get("id") #id 태그를 가져온다
 
 
-def fb_fetch_posts(pagename, since, until):
+def fb_fetch_posts(pagename, since, until): # fetch 가져오다 구현하다
     url = fb_gen_url(
         node=fb_name_to_id(pagename) + "/posts/",
         fields='id, message, link, name, type, shares, reactions, created_time, comments.limit(0).summary('

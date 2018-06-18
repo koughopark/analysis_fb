@@ -19,7 +19,7 @@ def json_to_str(filename, key):
         if value is None:
             continue
 
-        data += re.sub(r'[^\w]', '', value)
+        data += re.sub(r'[^\w]', '', value) # 정규표현식사용하여문자전부붙이기이것처럼ㅋ
 
         # print(value)
     return data

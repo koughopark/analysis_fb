@@ -54,8 +54,9 @@ def crawling(pagename, since, until, fetch=True):
             # save results to file(저장/적재)
             # open(filename,'w', encoding='utf-8') #쓰기모드로 열어라
         with open(filename, 'w', encoding='utf-8') as outfile:
-            json_string = json.dumps(results, indent=4, sort_keys=True,
-                                     ensure_ascii=False)  # json str으로 덤프하는 과정 텝을 4정도 주고 솔팅을 해라 모두 아스키코드로 해라
+            json_string = json.dumps(results, indent=4, sort_keys=True, ensure_ascii=False)
+            # json str으로 덤프하는 과정 텝을 4정도 주고 솔팅을 해라 모두 아스키코드로 해라
+            # json.dumps : json 문자열로 만든다.
             outfile.write(json_string)
 
     return filename
